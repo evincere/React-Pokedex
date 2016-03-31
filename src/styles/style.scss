@@ -1,0 +1,155 @@
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap-custom';
+
+@mixin mobile {
+	@media (max-width: $screen-sm-max) {
+		@content;
+	}
+}
+
+* { box-sizing: border-box; }
+
+body {
+	color: white;
+	font-family: 'Lane';
+	background-color: #dce3e7;
+}
+
+.dexmain {
+	position: relative;
+	height: 100vh;
+	background-color: #669999;
+
+	.maincontent {
+		height: 100vh;
+		background-color: #588686;
+	}
+
+	.pspritesWrapper {
+		padding-right: 0;
+
+		.officialart {
+			height: 30vh;
+			background-color: #588686;
+			margin-bottom: 15px;
+		}
+		.pokesprites {
+			@extend .officialart;
+			height: 26.5vh;
+		}
+		.shiny {
+			@extend .officialart;
+			height: 22.5vh;
+		}
+		.evolchain {
+			@extend .officialart;
+			height: 14vh;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.tsearchWrapper {
+	height: 100vh;
+	padding-right: 15px;
+	padding-left: 3px;
+	@include mobile {
+		height: 100%;
+		padding: 0;
+	}
+
+	.brandWrapper {
+		height: 20vh;
+		@include mobile {
+			height: 9.6vh;
+		}
+
+		.brand {
+			color: white;
+			background-color: #e84545;
+			margin-top: 15px;
+			padding: 12px;
+		}
+		.line {
+			position: absolute 30px 0 0 -200px;
+			width: 100vw;
+			height: 3px;
+			background-color: #000;
+			z-index: -99;
+		}
+	}
+
+	.dexsearch {
+		height: 80vh;
+		background-color: #903749;
+		@include mobile {
+			height: 40vh;
+		}
+
+		.search {
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid white;
+			border-radius: 0;
+			margin: 3vh 0 1.6vh 0;
+			@include mobile {
+				margin: 0 0 1vh 0;
+			}
+
+			&::placeholder {
+				color: #fff;
+			}
+			&:focus {
+
+			}
+		}
+
+		.pokemonlist {
+			height: 70vh;
+			overflow-y: scroll;
+			margin-bottom: 0;
+			@include mobile {
+				height: 34vh;
+			}
+
+			.pokemon {
+				display: flex;
+				background-color: #612935;
+				border: none;
+				border-radius: 0;
+				margin: 0;
+				padding: 0;
+				&:not(:last-of-type) {
+					border-bottom: solid 1px #acacac;
+				}
+
+				.number {
+					display: flex;
+					align-items: center;
+					font-size: responsive 18px 23px;
+					background-color: #6b303c;
+					padding: 10px;
+					z-index: 99;
+				}
+				.icon {
+					width: 44px;
+					height: 52px;
+					display: flex;
+					align-items: center;
+					background-color: #6a2c38;
+
+					img {
+						padding: 2px;
+						transform: translateX(-50px);
+						transition: all 1s;
+					}
+				}
+				.name {
+					padding-left: 10px;
+					display: flex;
+					align-items: center;
+					font-size: responsive 23px 27px;
+				}
+			}
+		}
+	}
+}
