@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PokemonHeader from './../components/PokemonHeader';
-import PokemonInfo from './../components/PokemonInfo.';
-
+import PokemonInfo from './../components/PokemonInfo';
+import PokemonDescription from './../components/PokemonDescription';
 
 export default class PokedexMain extends Component {
 	constructor() {
@@ -10,10 +10,12 @@ export default class PokedexMain extends Component {
 
 	render() {
 		return (
-			<div className="dexmain col-md-8">
-        <PokemonHeader />
-        <PokemonInfo />
-        <PokemonDescription />
+			<div className="dexmainWrapper col-md-6">
+        <div className="dexmain col-md-12">
+          <PokemonHeader />
+          <PokemonInfo />
+          <PokemonDescription />
+        </div>
 			</div>
 		);
 	}

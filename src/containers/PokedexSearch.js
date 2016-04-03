@@ -8,11 +8,17 @@ export default class DexSearch extends Component {
 	}
 
 	render() {
+    const { children } = this.props;
 		return (
-			<div className="dexsearch col-md-12">
-				<SearchBar />
-				<PokemonList />
-			</div>
+      <div className="col-md-3">
+        {children}
+        <div className="row">
+          <div className="dexsearch col-md-12">
+            <SearchBar />
+            <PokemonList />
+          </div>
+        </div>
+      </div>
 		);
 	}
 }

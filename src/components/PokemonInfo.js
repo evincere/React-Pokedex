@@ -12,7 +12,7 @@ const PokemonInfoHeader = () => (
 );
 
 const BaseStats = () => (
-  <div className="row">
+  <div className="col-md-12">
     base stats
   </div>
 );

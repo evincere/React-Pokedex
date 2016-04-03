@@ -2,7 +2,7 @@ import React from 'react';
 
 const PokemonHeader = () => (
   <div className="row">
-    <div className="header col-md-12">
+    <div className="header">
       header
     </div>
   </div>

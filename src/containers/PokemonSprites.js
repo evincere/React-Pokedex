@@ -11,11 +11,11 @@ export default class PokemonSprites extends Component {
 
 	render() {
 		return (
-			<div className="pokesprites col-md-4">
+			<div className="pokesprites col-md-2">
 				<PokemonArt />
         <PokemonModel />
         <PokemonShiny />
-				<EvolutionChain />
+				<PokemonEvolution />
 			</div>
 		);
 	}
