@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PokedexTitle from './../components/PokedexTitle';
-import DexSearch from './DexSearch.js';
-import DexMain from './DexMain.js';
+import PokedexBrand from './../components/PokedexBrand';
+import PokedexSearch from './PokedexSearch';
+import PokedexMain from './PokedexMain';
 import './../styles/style.scss';
 
 export default class App extends Component {
@@ -9,10 +9,10 @@ export default class App extends Component {
 		return (
 			<div className="container-fluid">
 				<div className="tsearchWrapper col-md-4">
-					<PokedexTitle />
-					<DexSearch />
+					<PokedexBrand />
+					<PokedexSearch />
 				</div>
-				<DexMain />
+				<PokedexMain />
 			</div>
 		);
 	}

@@ -17,14 +17,14 @@ body {
 .dexmain {
 	position: relative;
 	height: 100vh;
-	background-color: #669999;
+	background-color: #e0e0e0;
 
 	.maincontent {
 		height: 100vh;
-		background-color: #588686;
+		background-color: #2a2a3e;
 	}
 
-	.pspritesWrapper {
+	.pokesprites {
 		padding-right: 0;
 
 		.officialart {
@@ -32,7 +32,7 @@ body {
 			background-color: #588686;
 			margin-bottom: 15px;
 		}
-		.pokesprites {
+		.pokemodel {
 			@extend .officialart;
 			height: 26.5vh;
 		}
