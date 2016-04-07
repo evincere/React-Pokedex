@@ -6,6 +6,13 @@
 	}
 }
 
+@mixin tablet {
+	@media (max-width: $screen-md-max) {
+		@content;
+	}
+}
+
+
 * { box-sizing: border-box; }
 
 body {
@@ -14,53 +21,20 @@ body {
 	background-color: #dce3e7;
 }
 
-.dexmainWrapper {
-  background-color: green;
-  margin-left: 15px;
-  @include mobile {
-    margin-left: 0;
-  }
-  
-  .dexmain {
-    position: relative;
-    height: 100vh;
-    background-color: #2a2a3e;
-
-    .pokesprites {
-      padding-right: 0;
-
-      .officialart {
-        height: 30vh;
-        background-color: #588686;
-        margin-bottom: 15px;
-      }
-      .pokemodel {
-        @extend .officialart;
-        height: 26.5vh;
-      }
-      .shiny {
-        @extend .officialart;
-        height: 22.5vh;
-      }
-      .evolchain {
-        @extend .officialart;
-        height: 14vh;
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-
 .brandWrapper {
   height: 20vh;
   @include mobile {
-    height: 9.6vh;
+    height: 100%;
   }
 
   .brand {
     color: white;
     background-color: #e84545;
     padding: 12px;
+    margin-top: 15px;
+    @include mobile {
+      margin: 0;
+    }
   }
   .line {
     position: absolute 30px 0 0 -200px;
@@ -71,12 +45,125 @@ body {
   }
 }
 
+.dexmainWrapper {
+  background-color: #e0e0e0;
+  margin-left: 15px;
+  @include mobile {
+    margin-left: 0;
+    background-color: #903749;
+  }
+  
+  .dexmain {
+    position: relative;
+    height: 100vh;
+    background-color: #2a2a3e;
+    
+    
+    .dexheader {
+      display: flex;
+      height: 11vh;
+      align-items: center;
+      background-color: #34344d;
+      z-index: 3;
+      
+      .species {
+        display: flex;
+        font-size: responsive 16px 25px;
+        color: #ababce;
+        line-height: 23px;
+      }
+      
+      .heading {
+        font-size: responsive 30px 65px;
+        text-align: center;
+      }
+      
+      .type {
+        height: 100%;
+        padding-right: 0;
+        
+        .types {
+          display: flex;
+          height: 50%;
+          justify-content: center;
+          align-items: center;
+          background-color: red;
+        }
+      }
+    }
+    
+    .dexinfo {
+      border: 2px solid #3f3f55;
+      margin-top: 15px;
+      
+      .infoheader {
+        padding-right: 0;
+        
+        .ledWrapper {
+          display: flex;
+          position: relative -2px 17px;
+          width: 20%;
+          height: 35px;
+          align-items: center;
+          justify-content: center;
+          background-color: #2a2a3e;
+          border-left: 2px solid #3f3f55;
+          border-bottom: 2px solid #3f3f55;
+          padding-right: 0;
+          
+          %leds {
+            display: inline-block;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: #ffee58;
+            content: '';
+            border-radius: 50px;
+            @include tablet {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          .led {
+            @extend %leds;
+            position: relative;
+            margin-right: 15px;
+            
+            &::before {
+              @extend %leds;
+              background-color: #ef5350;
+              right: 36px;
+              @include tablet {
+                right: 30px;
+              }
+            }
+            &::after {
+              @extend %leds;
+              background-color: #66bb6a;
+              left: 36px;
+              @include tablet {
+                left: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    .description {
+      font-size: responsive 13px 22px;
+      border-top: 3px solid white;
+      border-bottom: 3px solid white;
+    }
+  }
+}
+
 .dexsearch {
   height: 80vh;
   background-color: #903749;
   margin-left: 0;
   @include mobile {
-    height: 40vh;
+    height: 40.1vh;
   }
 
   .search {

@@ -1,13 +1,21 @@
 import React from 'react';
 
-const PokemonInfoHeader = () => (
-  <div className="row">
-    <div className="infoheader col-md-9">
-      infoheader
+const InfoHeader = () => (
+  <div className="infoheader row col-md-12">
+    <div className="col-md-9">
+      <span class="japanese">JAPANESE FUSHIGIDANE</span>
+      <span class="gender">GENDER RATE 1</span>
+      <span class="catch">CATCH RATE 45</span>
     </div>
-    <div className="ledlights col-md-3">
-      led
+    <div className="ledWrapper col-md-3 pull-right">
+      <div className="led"></div>
     </div>
+  </div>
+);
+
+const Info = () => (
+  <div className="col-md-12">
+    Info
   </div>
 );
 
@@ -18,8 +26,9 @@ const BaseStats = () => (
 );
 
 const PokemonInfo = () => (
-  <div className="row">
-    <PokemonInfoHeader />
+  <div className="row dexinfo center-block">
+    <InfoHeader />
+    <Info />
     <BaseStats />
   </div>
 );
