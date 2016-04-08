@@ -93,12 +93,18 @@ body {
     }
     
     .dexinfo {
+      font-family: Bebas Neue;
       border: 2px solid #3f3f55;
       margin-top: 15px;
       
-      .infoheader {
+      .infoheaderWrapper {
         padding-right: 0;
-        
+          
+        .infoheader {
+          width: 80%;
+          font-size: responsive 23px 27px;
+        }
+                 
         .ledWrapper {
           display: flex;
           position: relative -2px 17px;
@@ -110,6 +116,9 @@ body {
           border-left: 2px solid #3f3f55;
           border-bottom: 2px solid #3f3f55;
           padding-right: 0;
+          @include mobile {
+            display: none;
+          }
           
           %leds {
             display: inline-block;
